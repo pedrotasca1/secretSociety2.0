@@ -22,6 +22,7 @@ section {
     }
 }
 
+/* Home Page */
 /* Navigation */
 .navigation {
     display: flex;
@@ -49,8 +50,10 @@ section {
 
     font-weight: bolder;
 
-    padding-inline: 128px;
+    padding-inline: 400px;
     height: 70vh;
+
+    
 
     /* background-color: grey; */
 }
@@ -63,20 +66,17 @@ section {
 .hero-image {
     position: absolute;
     
-    right: 40%;
+    right: 30%;
     top: 0;
     z-index: -1;
 
 
     height: 800px;
-    width: 400px;
-
-    opacity: 0;
 }
 
 .title-text2 {
     position: absolute;
-    right: 128px;
+    right: 20vw;
     font-size: 100px;
 }
 
@@ -112,4 +112,25 @@ section {
 
 .section3-text {
     text-align: center;
+}
+
+/* About Page */
+.content-card {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    padding: 10%;
+    max-width: 40%;
+}
+
+.about-title {
+    font-size: 48px;
+}
+
+.about-image {
+    position: absolute;
+    left: 40%;
+    top: 10%;
+    width: 80%;
 }
