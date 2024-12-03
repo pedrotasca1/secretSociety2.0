@@ -1,0 +1,115 @@
+/* Document Setup */
+* {
+    margin: 0;
+    font-family: sans-serif;
+}
+
+.hide {
+    display: none;
+}
+
+section {
+    min-width: 100vh;
+}
+
+/* Animations */
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Navigation */
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    align-self: center;
+
+    max-width: 1200px;
+    padding-inline: 32px;
+    padding-block: 16px;
+    margin: 0 auto;
+}
+
+.nav-button {
+    height: 48px;
+    padding: 8px;
+    animation: rotate 1s;
+}
+
+
+/* Section 1 */
+.section-one-title-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    font-weight: bolder;
+
+    padding-inline: 128px;
+    height: 70vh;
+
+    /* background-color: grey; */
+}
+
+.title-text1 {
+    font-size: 140px;
+    
+}
+
+.hero-image {
+    position: absolute;
+    
+    right: 40%;
+    top: 0;
+    z-index: -1;
+
+
+    height: 800px;
+    width: 400px;
+
+    opacity: 0;
+}
+
+.title-text2 {
+    position: absolute;
+    right: 128px;
+    font-size: 100px;
+}
+
+.title-text3 {
+    justify-content: end;
+    align-self: center;
+
+    font-size: 200px;
+}
+
+.clouds {
+    width: 80vw;
+    position: absolute;
+    bottom: 40px;
+    left: 10%;
+
+    z-index: 5;
+}
+
+/* Section 2 */
+.section2 {
+    padding: 120px;
+    background: red;
+    height: 40vh;
+}
+
+/* Section 3 */
+.section3 {
+    padding: 120px;
+    background: blue;
+    height: 100vh;
+}
+
+.section3-text {
+    text-align: center;
+}
