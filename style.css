@@ -111,8 +111,8 @@ section {
 
     z-index: 0;
 
-    animation: heart-beat 2s;
-    animation-iteration-count: infinite;
+    /* animation: heart-beat 2s;
+    animation-iteration-count: infinite; */
 }
 
 .train-collage {
