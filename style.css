@@ -1,7 +1,7 @@
 /* Document Setup */
 * {
     margin: 0;
-    font-family: sans-serif;
+    font-family: "inter", sans-serif;
 
     scrollbar-width: 0;
 }
@@ -16,6 +16,14 @@ body {
 
 section {
     min-width: 100vh;
+}
+
+.send-front {
+    z-index: 5; 
+}
+
+.send-back {
+    z-index: 0;
 }
 
 /* Animations */
@@ -97,7 +105,6 @@ section {
     line-height: 100%;
     letter-spacing: -1.125rem;
 
-    z-index: 1;
 }
 
 .hero-text-bottom {
@@ -107,7 +114,7 @@ section {
     line-height: normal;
     letter-spacing: -1.35rem;
 
-    z-index: 1;
+    z-index: 3;
 }
 
 .hero-collage {
@@ -140,20 +147,28 @@ section {
     z-index: 1;
 }
 
+.writters-animated {
+    position: absolute;
+    top: -50%;
+    right: -50%;
+
+    height: 150px;
+    
+    z-index: 2;
+}
+
 
 /* Section 02 */
 .section02 {
     height: 100vh;
     flex-shrink: 0;
-   
-    background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(73,71,97,1) 39%, rgba(255,255,255,1) 100%);
 
     position: relative;
 }
 
 .section02-content-container {
     display: inline-flex;
-    max-width: 600px;
+    max-width: 1000px;
     padding: 2rem;
     flex-direction: column;
     align-items: flex-start;
@@ -167,16 +182,17 @@ section {
     color: #000;
 
     font-family: "din-condensed";
-    font-size: 4rem;
+    font-size: 12rem;
     font-weight: 900;
     letter-spacing: -0.15rem;
 }
 
+.section-paragraph {
+    font-size: 32px;
+}
+
 .section02-content {
     align-self: stretch;
-
-    font-size: 2rem;
-    font-weight: 400;
 }
 
 .section02-image {
@@ -192,7 +208,6 @@ section {
     overflow-y: hidden;
     white-space: nowrap;
 
-    background-color: rgba(2,0,36,1);
 }
 
 
