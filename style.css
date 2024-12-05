@@ -7,8 +7,7 @@
 }
 
 body {
-    animation: fade-in ease-in 0.8s 1;
-    overflow: hidden;
+    animation: fade-in ease-in 0.8s 1  ;
 }
 
 .hide {

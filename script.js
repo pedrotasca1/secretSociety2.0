@@ -6,6 +6,7 @@ const trainCollage = document.getElementById("train-collage");
 const section02 = document.getElementById("section02");
 const linkCamera = document.querySelector(".section02-image");
 
+
 // Hero Section Effects
 document.addEventListener("scroll", () => {
     const scrollY = window.scrollY;
@@ -38,3 +39,5 @@ document.addEventListener("scroll", () => {
 
 // Section 2 
 section02.scrollLeft += 1440;
+
+
