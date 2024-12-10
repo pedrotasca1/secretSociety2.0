@@ -38,6 +38,29 @@ document.addEventListener("scroll", () => {
 });
 
 // Section 2 
-section02.scrollLeft += 1440;
+// Gsap Scroll-Effect
+gsap.registerPlugin(ScrollTrigger);
+
+const sectionHorizontal = gsap.utils.toArray(".section03-content-container");
+
+gsap.to(sectionHorizontal, {
+    xPercent: -100 * (sectionHorizontal.length - 1),
+    ease: "power1.inOut", 
+    scrollTrigger: {
+        trigger: "#section03",
+        pin: true,
+        scrub: 3,
+        start: "top top-20",
+        // end: "+=150%",
+        immediateRender: true,
+        snap: {
+            snapTo: 1 / (sectionHorizontal.length - 1),
+            // ease: "back.inOut",        
+        },
+        
+    },
+});
+
+
 
 

@@ -9,6 +9,12 @@
     <link rel="stylesheet" href="https://use.typekit.net/elt5scz.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     
+     <!-- GSAP -->
+     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+     <!-- RoughEase, ExpoScaleEase and SlowMo are all included in the EasePack file -->    
+     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/EasePack.min.js"></script>
+     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/CustomEase.min.js"></script>
    
 </head>
 
@@ -23,7 +29,7 @@
 
     <section id="hero" class="hero-section">
         <h1 class="hide">UNDERGOUND SOCIETY</h1>
-        <div class="hero-container">
+        <div id="hero-container" class="hero-container">
             <img class="hero-collage" src="Assets/collage-final.png" alt="digital collage containing graffiti elements">
             <div class="train-collage-wrapper animate__animated animate__bounce">
                 <img id="train-collage" class="train-collage" src="Assets/train-separate.png" alt="train from collage">
@@ -45,13 +51,14 @@
 
     <section id="section02" class="section02">
         <div class="section02-content-container">
-            <h2 class="section-title">What is Graffiti?</h2>
-            <p class="section-paragraph">
-                Well, that’s really difficult to explain because graffiti means many different things to all kinds of people.<br>
-                While your 80 year-old neighbour might associate graffiti as vandalism, others can see it as an art form.<br>
-                Generally speaking, graffiti is used to describe everything from tags and scratched names on the underground to graffiti-influenced artwork on canvas.<br>
-            </p>
-
+            <div class="section-text">
+                <h2 class="section-title">What is Graffiti?</h2>
+                <p class="section-paragraph">
+                    Well, that’s really difficult to explain because graffiti means many different things to all kinds of people.<br>
+                    While your 80 year-old neighbour might associate graffiti as vandalism, others can see it as an art form.<br>
+                    Generally speaking, graffiti is used to describe everything from tags and scratched names on the underground to graffiti-influenced artwork on canvas.<br>
+                </p>
+            </div>
             <a href="https://www.youtube.com/watch?v=R9plEqV2TKg" class="link-camera" target="_blank">
                 <img class="section02-image animate__animated animate__headShake" src="Assets/camera.png" alt="video recorder">
             </a>
@@ -60,30 +67,48 @@
     </section>
 
     <section class="section03" id="section03">
-        <div class="section03-content-container">
-            <h2 class="section-title">Tools</h2>
-            
-            <p class="section-paragraph">
-                Well, that’s really difficult to explain because graffiti means many different things to all kinds of people.<br>
-                While your 80 year-old neighbour might associate graffiti as vandalism, others can see it as an art form.<br>
-                Generally speaking, graffiti is used to describe everything from tags and scratched names on the underground to graffiti-influenced artwork on canvas.<br>
-            </p>
+        <!-- <div class="horizontal-container"> -->
+            <div class="section03-content-container">
+                <div class="section-text">
+                    <h2 class="section-title">Tools</h2>
+                    
+                    <p class="section-paragraph">
+                        Well, that’s really difficult to explain because graffiti means many different things to all kinds of people.<br>
+                        While your 80 year-old neighbour might associate graffiti as vandalism, others can see it as an art form.<br>
+                        Generally speaking, graffiti is used to describe everything from tags and scratched names on the underground to graffiti-influenced artwork on canvas.<br>
+                    </p>
+                </div>
 
-        </div>
+                <img class="tools-spray" src="Assets/krylon.png" alt="spray can">
+                <img class="tools-marker" src="Assets/marker-animated.png" alt="marker">
+                <img class="tools-squeezer" src="Assets/Collage/krink-marker.png" alt="squeezer">
+            </div>
+
+
+            <div class="section03-content-container">
+                <div class="section-text">
+                    <h2 class="section-title">Markers</h2>
+                    <p class="section-paragraph">
+                        In the world of illegal graffiti, markers are often the tool of choice for tagging. They’re quick—just a few strokes, and they’re done—so you’re in and out before anyone can spot you.<br>
+                        Some graffiti artists modify their markers, either by adding ink or changing the tips to create different effects. The ink is usually bold and durable, meaning it can stand up to the elements and stay visible for longer periods, even in rough urban environments.<br>
+                        Markers allow artists to be sneaky, efficient, and still make an impact, all while avoiding the mess and risk of using spray paint in public spaces. So for illegal graffiti, markers are the perfect tool to keep things fast, stealthy, and effective.
+                    </p>
+                </div>
+            </div>
+
+            <div class="section03-content-container">
+                <div class="section-text">
+                    <h2 class="section-title">Spray</h2>
+                    <p class="section-paragraph">
+                        Well, that’s really difficult to explain because graffiti means many different things to all kinds of people.<br>
+                        While your 80 year-old neighbour might associate graffiti as vandalism, others can see it as an art form.<br>
+                        Generally speaking, graffiti is used to describe everything from tags and scratched names on the underground to graffiti-influenced artwork on canvas.<br>
+                    </p>
+                </div>
+            </div>
+    
     </section>
 
-    <!-- <section class="section03" id="section03">
-        <div class="section03-content-container">
-            <h2 class="section-title">Tools</h2>
-            <p class="section-paragraph">
-                Well, that’s really difficult to explain because graffiti means many different things to all kinds of people.<br>
-                While your 80 year-old neighbour might associate graffiti as vandalism, others can see it as an art form.<br>
-                Generally speaking, graffiti is used to describe everything from tags and scratched names on the underground to graffiti-influenced artwork on canvas.<br>
-            </p>
-
-        </div>
-    </section> -->
-    
     <!-- JS File -->
     <script src="/script.js"></script>
 
@@ -93,12 +118,6 @@
       AOS.init();
     </script>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    
-    <!-- GSAP -->
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
-    <!-- RoughEase, ExpoScaleEase and SlowMo are all included in the EasePack file -->    
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/EasePack.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/CustomEase.min.js"></script>
+   
 </body>
 </html>

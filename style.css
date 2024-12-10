@@ -2,12 +2,12 @@
 * {
     margin: 0;
     font-family: "inter", sans-serif;
-
-    scrollbar-width: 0;
 }
 
 body {
-    animation: fade-in ease-in 0.8s 1  ;
+    animation: fade-in ease-in 0.8s 1;
+    overflow-x: hidden;
+
 }
 
 .hide {
@@ -53,6 +53,11 @@ section {
         opacity: 1;
     }
 }
+
+.scroll-wrapper {
+    will-change: scroll-position;
+}
+
 
 /* Home Page */
 /* Navigation */
@@ -159,20 +164,49 @@ section {
 
 /* Section 02 */
 .section02, .section03 {
-    height: 100vh;
+    /* height: 100vh; */
     flex-shrink: 0;
 
     position: relative;
+}
 
-    overflow-x: scroll;
+#section03 {
+    width: 100vw;
+    /* overflow-x: scroll; */
+    scroll-snap-type: x mandatory;
+    display: flex;
+    /* overscroll-behavior-x: contain; */
+    
+}
+
+.horizontal-container {
+    display: flex;
+   
+    
+   
+}
+
+.horizontal-container :first-child {
+    width: 100vw;
+}
+
+.section-text {
+    max-width: 1000px !important;
 }
 
 .section02-content-container, .section03-content-container {
     display: inline-flex;
-    max-width: 1000px; 
+
+    /* height: 100vh; *\
+    /* max-width: 1000px;  */
+    width:  100vw;
+    scroll-snap-align: start;
     padding: 2rem;
     flex-direction: column;
     align-items: flex-start;
+    flex: 0 0 auto;
+
+    scroll-behavior: smooth;
 }
 
 .section-title {
@@ -188,6 +222,7 @@ section {
 
 .section-paragraph {
     font-size: 32px;
+    
 }
 
 .section02-content {
@@ -202,11 +237,29 @@ section {
     animation-iteration-count: infinite;
 }
 
-.section03 {
-    overflow-x: scroll;
-    overflow-y: hidden;
-    white-space: nowrap;
 
+.tools-spray {
+    position: absolute;
+    right: 0;
+    width: 500px;
+    rotate: 45deg;
+}
+
+.tools-marker {
+    position: absolute;
+    right: -15px;
+    width: 1000px;
+
+    rotate: 60deg;
+}
+
+.tools-squeezer {
+    position: absolute;
+    right: 25%;
+    top: -45px;
+
+    width: 600px;
+    rotate: 33deg;
 }
 
 
