@@ -81,6 +81,13 @@ section {
 }
 
 /* Hero Section */
+
+#hero {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+}
+
 .hero-section {
     background-image: url(/Assets/hero-background.png);
 }
@@ -164,7 +171,7 @@ section {
 
 /* Section 02 */
 .section02, .section03 {
-    /* height: 100vh; */
+    height: 100vh;
     flex-shrink: 0;
 
     position: relative;
@@ -194,11 +201,10 @@ section {
     max-width: 1000px !important;
 }
 
-.section02-content-container, .section03-content-container {
+.section02-content-container, .section-content-container {
     display: inline-flex;
 
-    /* height: 100vh; *\
-    /* max-width: 1000px;  */
+
     width:  100vw;
     scroll-snap-align: start;
     padding: 2rem;
@@ -262,10 +268,18 @@ section {
     rotate: 33deg;
 }
 
+.bottom-collage {
+    position: absolute;
+    bottom: 0;
+}
 
-
-
-
+.markers-link {
+    position: absolute;
+    left: 2rem;
+    bottom: -1;
+    animation-iteration-count: infinite;
+    animation-delay: 20s;
+}
 
 
 
