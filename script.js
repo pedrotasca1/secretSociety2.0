@@ -37,10 +37,11 @@ document.addEventListener("scroll", () => {
     canCollage.style.transform = `translate(${offsetX}px, ${offsetY}px) rotate(${rotation}deg)`;
 });
 
-// Section 2 
-// Gsap Scroll-Effect
 gsap.registerPlugin(ScrollTrigger);
 
+
+
+// Horizontal Scroll GSAP
 const sectionHorizontal = gsap.utils.toArray(".section03-content-container");
 
 gsap.to(sectionHorizontal, {
@@ -49,17 +50,18 @@ gsap.to(sectionHorizontal, {
     scrollTrigger: {
         trigger: "#section03",
         pin: true,
-        scrub: 3,
-        start: "top top-20",
-        // end: "+=150%",
+        scrub: 0.3,
+        start: "center center",
+        end: "+=1440%",
         immediateRender: true,
         snap: {
             snapTo: 1 / (sectionHorizontal.length - 1),
-            // ease: "back.inOut",        
+            ease: "ease.in",        
         },
         
     },
 });
+
 
 
 

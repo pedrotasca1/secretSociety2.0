@@ -87,7 +87,7 @@ section {
 
 .hero-content {
     display: flex;
-    height: 56.875rem;
+    height: 90vh;
     padding: 2rem;
     flex-direction: column;
     justify-content: space-between;
