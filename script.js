@@ -37,50 +37,25 @@ document.addEventListener("scroll", () => {
     canCollage.style.transform = `translate(${offsetX}px, ${offsetY}px) rotate(${rotation}deg)`;
 });
 
-
 // Horizontal Scroll GSAP
 const sectionHorizontal = gsap.utils.toArray(".section-content-container");
+const totalScrollWidth = (sectionHorizontal.length - 1) * 100;
+
 
 gsap.to(sectionHorizontal, {
-    xPercent: -100 * (sectionHorizontal.length - 1),
-    ease: "power1.inOut", 
+    xPercent: -100 * (sectionHorizontal.length - 1), // Moves sections horizontally
+    ease: "none",
     scrollTrigger: {
-        trigger: "#section03",
-        pin: true,
-        scrub: 0.3,
-        start: "center center",
-        end: "+=1440%",
-        // immediateRender: true,
+        trigger: "#section03", 
+        pin: true, 
+        scrub: 1,
+        start: "top top",
+        end: `+=${totalScrollWidth * 5}vw`,
         snap: {
-            snapTo: 1 / (sectionHorizontal.length - 1),
-            ease: "ease.in",        
+            snapTo: (progress) => Math.round(progress * (sectionHorizontal.length - 1)) / (sectionHorizontal.length - 1), 
+            // ease: "ease.inOut", // Smooth easing for snapping
         },
+        anticipatePin: 1,
+        markers: true,
     },
 });
-
-
-
-// Select all section containers
-// const sectionHorizontal = gsap.utils.toArray(".section-content-container");
-
-// // Get the total scroll width dynamically
-// const totalScrollWidth = (sectionHorizontal.length - 1) * 100;
-
-// gsap.to(sectionHorizontal, {
-//     xPercent: -100 * (sectionHorizontal.length - 1), // Moves sections horizontally
-//     ease: "power1.inOut",
-//     scrollTrigger: {
-//         trigger: "#section03", // The section containing the horizontal scroll
-//         pin: true, // Pin the section during scrolling
-//         scrub: 0.3, // Smooth scrolling effect
-//         start: "top top", // Adjust trigger start point
-//         end: `+=${totalScrollWidth}vw`, // Dynamically calculate the scroll distance
-//         snap: {
-//             snapTo: (progress) => Math.round(progress * (sectionHorizontal.length - 1)) / (sectionHorizontal.length - 1),
-//             duration: 0.3, // Smooth snap duration
-//             ease: "power2.inOut", // Smooth snap easing
-//         },
-//         immediateRender: true, // Ensure smooth rendering
-//     },
-// });
-
