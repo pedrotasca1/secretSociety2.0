@@ -95,7 +95,7 @@ section {
 
 .hero-content {
     display: flex;
-    height: 90vh;
+    height: 80vh;
     padding: 2rem;
     flex-direction: column;
     justify-content: space-between;
@@ -278,10 +278,10 @@ section {
 .section04 {
     display: flex;
     flex-direction: column;
-    align-items: end;
+    align-items: center;
     justify-content: end;
 
-    text-align: center;
+    text-align: justify ;
 
     background: rgb(2,0,36);
     background: -moz-linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(120,120,120,1) 34%, rgba(228,228,228,1) 74%, rgba(255,255,255,1) 100%);
@@ -296,13 +296,21 @@ section {
     overflow-y: scroll;
 }
 
-.section04-paragraph {
-    max-width: 1000px;
-    
+
+.line {
+    opacity: 0;
+    transform: translateY(10vh); /* Initial position of text off-screen */
+    margin: 0;
     font-family: "Anton";
     font-size: 2rem;
-    font-weight: 400;
+    font-weight: 200;
     color: white;
+}
+
+.scrolling-text {
+    position: relative;
+    overflow: hidden;
+    height: 100%; /* Full height of the container */
 }
 
 .section05 {
@@ -310,13 +318,21 @@ section {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+
     
 
     background-color: #020024;
     color: white;
 
     position: relative;
+    overflow: hidden;
     overflow-y: scroll;
+    scroll-behavior: smooth;
+}
+
+.horizontal-scroll-wrapper {
+    display: inherit;
+    width: fit-content;
 }
 
 .section05-content-container {
@@ -326,8 +342,8 @@ section {
 }
 
 .section05-paragraph {
-    font-size: 5rem;
-    font-weight: 100;
+    font-size: 15rem;
+    font-weight: 500;
 
     opacity: 0.8;
     white-space: nowrap;
