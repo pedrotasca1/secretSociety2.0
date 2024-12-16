@@ -67,7 +67,7 @@ gsap.to(sectionHorizontal, {
             // ease: "ease.inOut", // Smooth easing for snapping
         },
         anticipatePin: 1,
-        markers: true,
+        // markers: true,
     },
 });
 
@@ -96,5 +96,27 @@ gsap.to(sectionFive, {
         scrub: 1, // Smooth scrolling effect
         start: "top top", // Start when the top of section05 hits the top of the viewport
         end: "+=1440%", // End when the entire horizontal scroll is completed
+        onLeave: () => {
+            appendImage()
+        }
     },
 });
+
+// Function to append the image
+const appendImage = () => {
+    // Create a new image element
+    const newImage = document.createElement("img");
+    newImage.src = "Assets/illustrations/white-tag.png"; // Replace with the image path
+    newImage.classList.add("final-image");
+
+    // Append the image to the section
+    section05.appendChild(newImage);
+    gsap.fromTo(newImage, 
+        { opacity: 0, scale: 0.2 }, // Initial state: hidden and small
+        { opacity: 1, scale: 1, duration: 1, ease: "power2.inOut" } // End state: fully visible and at normal size
+    );
+};
+
+// Listen for scroll events
+window.addEventListener("scroll", checkScrollPosition);
+
