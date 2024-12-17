@@ -117,6 +117,8 @@ section {
     font-weight: 700;
     line-height: 100%;
     letter-spacing: -1.125rem;
+
+    z-index: 10;
 }
 
 .hero-text-bottom {
@@ -306,6 +308,8 @@ section {
     display: flex;
     flex-direction: column;
     gap: 32px;
+
+    z-index: -1;
 }
 
 .images-2 {
@@ -405,6 +409,11 @@ section {
     left: 40%;
     top: 10%;
     width: 80%;
+}
+
+.container404 {
+    display: flex;
+    justify-content: center;
 }
 
 /* Mobile (up to 576px) */
@@ -659,3 +668,4 @@ section {
         margin: 0 auto;
     }
 }
+

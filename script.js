@@ -118,5 +118,5 @@ const appendImage = () => {
 };
 
 // Listen for scroll events
-window.addEventListener("scroll", checkScrollPosition);
+// window.addEventListener("scroll", checkScrollPosition);
 
