@@ -404,11 +404,22 @@ section {
     font-size: 48px;
 }
 
-.about-image {
+.about-container {
+    display: flex;
+    position: relative;
+
+    width: 100vw;
+    height: 100vh;
+}
+
+.about-container img {
     position: absolute;
-    left: 40%;
-    top: 10%;
-    width: 80%;
+    left: -200px;
+    top: -70%;
+
+    scale: 70%;
+    overflow: hidden;
+
 }
 
 .container404 {
