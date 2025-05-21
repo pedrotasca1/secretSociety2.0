@@ -410,6 +410,7 @@ section {
 .about-container {
     display: flex;
     position: relative;
+    
 
     width: 100vw;
     height: 100vh;
@@ -417,11 +418,15 @@ section {
 
 .about-container img {
     position: absolute;
-    left: -200px;
+    left: -600px;
     top: -70%;
 
     scale: 70%;
     overflow: hidden;
+
+    opacity: 0.2;
+
+    z-index: -2;
 
 }
 
