@@ -4,7 +4,8 @@
     font-family: "inter", sans-serif;
 }
 
-html, body {
+html,
+body {
     animation: fade-in ease-in 0.8s 1;
     overflow-x: hidden;
     width: 100vw !important;
@@ -22,7 +23,7 @@ section {
 }
 
 .send-front {
-    z-index: 5; 
+    z-index: 5;
 }
 
 .send-back {
@@ -34,6 +35,7 @@ section {
     0% {
         transform: rotate(0deg);
     }
+
     100% {
         transform: rotate(360deg);
     }
@@ -43,6 +45,7 @@ section {
     0% {
         opacity: 1;
     }
+
     100% {
         opacity: 0;
     }
@@ -52,6 +55,7 @@ section {
     0% {
         opacity: 0;
     }
+
     100% {
         opacity: 1;
     }
@@ -116,20 +120,20 @@ section {
 
 .hero-text {
     font-family: "din-condensed", sans-serif;
-    font-size: 18.75rem;
+    font-size: clamp(6rem, 20vw, 18.75rem);
     font-weight: 700;
     line-height: 100%;
-    letter-spacing: -1.125rem;
+    letter-spacing: clamp(-0.4rem, -1vw, -1.125rem);
 
     z-index: 10;
 }
 
 .hero-text-bottom {
     font-family: "din-condensed", sans-serif;
-    font-size: 22.5rem;
+    font-size: clamp(7rem, 24vw, 22.5rem);
     font-weight: 700;
     line-height: normal;
-    letter-spacing: -1.35rem;
+    letter-spacing: clamp(-0.4rem, -1.2vw, -1.35rem);
 
     z-index: 3;
 }
@@ -170,13 +174,14 @@ section {
     right: -50%;
 
     height: 150px;
-    
+
     z-index: 2;
 }
 
 
 /* Section 02 */
-.section02, .section03 {
+.section02,
+.section03 {
     flex-shrink: 0;
 
     position: relative;
@@ -184,11 +189,10 @@ section {
 
 #section03 {
     width: 100vw;
-    /* overflow-x: scroll; */
-    /* scroll-snap-type: x mandatory; */
     display: flex;
-    /* overscroll-behavior-x: contain; */
-    
+    flex-direction: row;
+    flex-wrap: nowrap;
+    overflow: hidden;
 }
 
 .horizontal-container {
@@ -197,14 +201,18 @@ section {
 
 .section-text {
     max-width: 1000px !important;
+    padding: 1rem;
+    box-sizing: border-box;
 }
 
-.section02-content-container, .section-content-container {
+.section02-content-container,
+.section-content-container {
     display: flex;
     flex-wrap: nowrap;
 
-
-    width:  100vw !important;
+    width: 100vw !important;
+    max-width: 100vw;
+    box-sizing: border-box;
     /* scroll-snap-align: start; */
     padding: 2rem;
     flex-direction: column;
@@ -220,14 +228,14 @@ section {
     color: #000;
 
     font-family: "Anton";
-    font-size: 10rem;
+    font-size: clamp(3rem, 10vw, 10rem);
     font-weight: 400;
     letter-spacing: -0.15rem;
 }
 
 .section-paragraph {
-    font-size: 32px;
-    
+    font-size: clamp(16px, 2vw, 32px);
+
 }
 
 .section02-content {
@@ -238,7 +246,7 @@ section {
     position: absolute;
     right: 0;
     bottom: 32px;
-    height: 500px;
+    height: clamp(200px, 30vw, 500px);
     animation-iteration-count: infinite;
 }
 
@@ -246,14 +254,14 @@ section {
 .tools-spray {
     position: absolute;
     right: 0;
-    width: 500px;
+    width: clamp(200px, 30vw, 500px);
     rotate: 45deg;
 }
 
 .tools-marker {
     position: absolute;
     right: -15px;
-    width: 1000px;
+    width: clamp(300px, 50vw, 1000px);
 
     rotate: 60deg;
 }
@@ -263,7 +271,7 @@ section {
     right: 25%;
     top: -45px;
 
-    width: 600px;
+    width: clamp(200px, 40vw, 600px);
     rotate: 33deg;
 }
 
@@ -288,13 +296,13 @@ section {
     justify-content: end;
     height: 100vh;
 
-    text-align: justify ;
+    text-align: justify;
 
-    background: rgb(2,0,36);
-    background: -moz-linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(120,120,120,1) 34%, rgba(228,228,228,1) 74%, rgba(255,255,255,1) 100%);
-    background: -webkit-linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(120,120,120,1) 34%, rgba(228,228,228,1) 74%, rgba(255,255,255,1) 100%);
-    background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(120,120,120,1) 34%, rgba(228,228,228,1) 74%, rgba(255,255,255,1) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#020024",endColorstr="#ffffff",GradientType=1);
+    background: rgb(2, 0, 36);
+    background: -moz-linear-gradient(0deg, rgba(2, 0, 36, 1) 0%, rgba(120, 120, 120, 1) 34%, rgba(228, 228, 228, 1) 74%, rgba(255, 255, 255, 1) 100%);
+    background: -webkit-linear-gradient(0deg, rgba(2, 0, 36, 1) 0%, rgba(120, 120, 120, 1) 34%, rgba(228, 228, 228, 1) 74%, rgba(255, 255, 255, 1) 100%);
+    background: linear-gradient(0deg, rgba(2, 0, 36, 1) 0%, rgba(120, 120, 120, 1) 34%, rgba(228, 228, 228, 1) 74%, rgba(255, 255, 255, 1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#020024", endColorstr="#ffffff", GradientType=1);
 }
 
 .section04-content-container {
@@ -322,7 +330,8 @@ section {
 
 .line {
     opacity: 0;
-    transform: translateY(10vh); /* Initial position of text off-screen */
+    transform: translateY(10vh);
+    /* Initial position of text off-screen */
     margin: 0;
     font-family: "Anton";
     font-size: 2rem;
@@ -333,7 +342,8 @@ section {
 .scrolling-text {
     position: relative;
     overflow: hidden;
-    height: 100%; /* Full height of the container */
+    height: 100%;
+    /* Full height of the container */
 }
 
 .section05 {
@@ -342,7 +352,7 @@ section {
     align-items: center;
     justify-content: center;
 
-    
+
 
     background-color: #020024;
     color: white;
@@ -363,11 +373,11 @@ section {
 .section05-content-container {
     max-width: 1200px;
     text-align: center;
- 
+
 }
 
 .section05-paragraph {
-    font-size: 15rem;
+    font-size: clamp(3rem, 15vw, 15rem);
     font-weight: 500;
 
     opacity: 0.8;
@@ -410,7 +420,7 @@ section {
 .about-container {
     display: flex;
     position: relative;
-    
+
 
     width: 100vw;
     height: 100vh;
@@ -418,8 +428,8 @@ section {
 
 .about-container img {
     position: absolute;
-    left: -600px;
-    top: -70%;
+    left: -20%;
+    top: -10%;
 
     scale: 70%;
     overflow: hidden;
@@ -437,6 +447,7 @@ section {
 
 /* Mobile (up to 576px) */
 @media (max-width: 900px) {
+
     /* General Reset */
     * {
         margin: 0;
@@ -444,7 +455,8 @@ section {
         overflow-x: hidden;
     }
 
-    html, body {
+    html,
+    body {
         animation: fade-in ease-in 0.8s 1;
         overflow-x: hidden;
         width: 100vw !important;
@@ -497,7 +509,8 @@ section {
 
 
 
-    .hero-text-top, .hero-text-bottom {
+    .hero-text-top,
+    .hero-text-bottom {
         font-size: 64px;
         letter-spacing: normal;
         text-align: center;
@@ -507,7 +520,10 @@ section {
 
     }
 
-    .hero-collage, .train-collage-wrapper, .can-animated, .writters-animated {
+    .hero-collage,
+    .train-collage-wrapper,
+    .can-animated,
+    .writters-animated {
         position: absolute;
         scale: 0.8;
         left: -120%;
@@ -518,7 +534,7 @@ section {
     }
 
     /* Section 02 and 03 */
-    .section02, .section03 {
+    .section02 {
         display: flex;
         width: 100%;
         height: 100%;
@@ -530,27 +546,39 @@ section {
         overflow-x: hidden;
     }
 
-    #section03 {
-        width: 100%;
+    .section03 {
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        width: 100%;
+        height: 100vh;
+        overflow-x: hidden;
+    }
 
+    #section03 {
+        width: 100vw;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
         overflow-x: hidden;
     }
 
     .horizontal-container {
         display: flex;
-        flex-direction: column;
         width: 100%;
     }
 
-    .section02-content-container, .section-content-container {
+    .section02-content-container,
+    .section-content-container {
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
         padding: 1rem;
-        width: 100%;
+        width: 100vw;
+        min-width: 100vw;
+        max-width: 100vw;
+        box-sizing: border-box;
 
         overflow-x: hidden !important;
     }
@@ -569,6 +597,31 @@ section {
     .section02-image {
         width: 100%;
         position: static;
+    }
+
+    .section-content-container {
+        position: relative;
+    }
+
+    .tools-spray,
+    .tools-marker,
+    .tools-squeezer {
+        top: auto;
+        bottom: 5%;
+        right: 5%;
+    }
+
+    .markers-link {
+        position: absolute;
+        left: 50%;
+        bottom: 2rem;
+        transform: translateX(-50%);
+        width: clamp(100px, 30vw, 200px);
+    }
+
+    .markers-link img {
+        width: 200px;
+        height: auto;
     }
 
     /* Section 04 */
@@ -635,7 +688,7 @@ section {
     .horizontal-scroll-wrapper {
         display: flex;
         position: relative;
-        width: 100%;
+        width: fit-content;
     }
 
     .section05-content-container {
@@ -645,10 +698,10 @@ section {
     }
 
     .section05-paragraph {
-        font-size: 8rem;
+        font-size: clamp(3rem, 15vw, 15rem);
         font-weight: 500;
         opacity: 0.8;
-        white-space: normal;
+        white-space: nowrap;
     }
 
     .disclaimer-image {
@@ -659,9 +712,11 @@ section {
     }
 
     .final-image {
-        position: static;
+        position: absolute;
         width: 80%;
         height: auto;
+        bottom: 0;
+        left: 10%;
         object-fit: scale-down;
     }
 
@@ -687,4 +742,3 @@ section {
         margin: 0 auto;
     }
 }
-

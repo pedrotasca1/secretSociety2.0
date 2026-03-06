@@ -23,7 +23,13 @@ document.addEventListener("scroll", () => {
     const scrollY = window.scrollY;
     const offsetX = scrollY / 1;
 
-    trainCollage.style.transform = `translate(${offsetX}px, 0)`;
+    // Check if the screen is mobile width
+    if (window.innerWidth <= 900) {
+        // Shifting UP to align with background
+        trainCollage.style.transform = `translate(${offsetX}px, -40px)`;
+    } else {
+        trainCollage.style.transform = `translate(${offsetX}px, 0)`;
+    }
 });
 
 document.addEventListener("scroll", () => {
@@ -48,54 +54,73 @@ gsap.to(verticalScroll, {
     },
 })
 
+// Responsive GSAP Settings
+let mm = gsap.matchMedia();
+
 // Horizontal Scroll GSAP
 const sectionHorizontal = gsap.utils.toArray(".section-content-container");
 const totalScrollWidth = (sectionHorizontal.length - 1) * 100;
 
-
-gsap.to(sectionHorizontal, {
-    xPercent: -100 * (sectionHorizontal.length - 1), // Moves sections horizontally
-    ease: "none",
-    scrollTrigger: {
-        trigger: "#section03", 
-        pin: true, 
-        scrub: 1,
-        start: "top top",
-        end: `+=${totalScrollWidth * 5}vw`,
-        snap: {
-            snapTo: (progress) => Math.round(progress * (sectionHorizontal.length - 1)) / (sectionHorizontal.length - 1), 
-            // ease: "ease.inOut", // Smooth easing for snapping
+mm.add("(min-width: 901px)", () => {
+    // Desktop: with snapping
+    gsap.to(sectionHorizontal, {
+        xPercent: -100 * (sectionHorizontal.length - 1),
+        ease: "none",
+        scrollTrigger: {
+            trigger: "#section03",
+            pin: true,
+            scrub: 1,
+            start: "top top",
+            end: `+=${totalScrollWidth * 5}vw`,
+            snap: {
+                snapTo: (progress) => Math.round(progress * (sectionHorizontal.length - 1)) / (sectionHorizontal.length - 1),
+            },
+            anticipatePin: 1,
         },
-        anticipatePin: 1,
-        // markers: true,
-    },
+    });
+});
+
+mm.add("(max-width: 900px)", () => {
+    // Mobile: no snapping
+    gsap.to(sectionHorizontal, {
+        xPercent: -100 * (sectionHorizontal.length - 1),
+        ease: "none",
+        scrollTrigger: {
+            trigger: "#section03",
+            pin: true,
+            scrub: 1,
+            start: "top top",
+            end: `+=${totalScrollWidth * 5}vw`,
+            anticipatePin: 1,
+        },
+    });
 });
 
 const lines = gsap.utils.toArray(".line");
 
 gsap.to(lines, {
-    opacity: 1, // Make each line visible
-    y: 0, // Move the text to its original position (from off-screen)
-    stagger: 1, // Delay between each line animation
+    opacity: 1,
+    y: 0,
+    stagger: 1,
     scrollTrigger: {
-        trigger: "#section04", // Trigger when #section04 comes into view
-        pin: true, // Pin the section during scroll
-        scrub: 1, // Smooth scrolling effect
-        start: "bottom bottom", // Start when section04 enters the viewport
-        end: "+=800%", // Extend the scroll trigger to fit all lines
+        trigger: "#section04",
+        pin: true,
+        scrub: 1,
+        start: "bottom bottom",
+        end: "+=800%",
     },
 });
 
-const sectionFive = document.querySelector(".horizontal-scroll-wrapper"); // Container to move horizontally
+const sectionFive = document.querySelector(".horizontal-scroll-wrapper");
 
 gsap.to(sectionFive, {
-    xPercent: -100 * (sectionFive.children.length - 1), // Move based on the number of sections
+    xPercent: -100 * (sectionFive.children.length - 1),
     scrollTrigger: {
-        trigger: "#section05", // Trigger when section05 comes into view
-        pin: true, // Pin the #section05 while the animation happens
-        scrub: 1, // Smooth scrolling effect
-        start: "top top", // Start when the top of section05 hits the top of the viewport
-        end: "+=1440%", // End when the entire horizontal scroll is completed
+        trigger: "#section05",
+        pin: true,
+        scrub: 1,
+        start: "top top",
+        end: "+=1440%",
         onLeave: () => {
             appendImage()
         }
@@ -111,12 +136,8 @@ const appendImage = () => {
 
     // Append the image to the section
     section05.appendChild(newImage);
-    gsap.fromTo(newImage, 
+    gsap.fromTo(newImage,
         { opacity: 0, scale: 0.2 }, // Initial state: hidden and small
         { opacity: 1, scale: 1, duration: 1, ease: "power2.inOut" } // End state: fully visible and at normal size
     );
 };
-
-// Listen for scroll events
-// window.addEventListener("scroll", checkScrollPosition);
-
